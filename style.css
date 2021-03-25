@@ -1,0 +1,150 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+}
+
+body{
+  background-color: darkblue;
+  font-family: lobster;
+}
+header{
+  display:flex;
+  position:relative;
+  justify-content: center;
+  height:500px;
+  flex-direction: column;
+  text-align: center;
+  background-color: maroon;
+  color: peru;
+  overflow:hidden;
+}
+
+
+header h1{
+  font-size: 4rem;
+}
+header h1:hover{
+  color: cornsilk;
+  animation: neon 0.4s ease-in-out infinite  alternate;
+}
+
+header h2:hover{
+  color: cornsilk;
+  animation: neon 0.4s ease-in-out infinite  alternate;
+
+}
+
+header nav{
+  position:absolute;
+  top:40px;
+  right:90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#nav_round{
+  position:absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center;
+  list-style: none;
+  height:400px;
+  width:400px;
+  border-radius: 50%;
+  background-color: pink;
+  border:solid 40px red;
+  transform: scale(0);
+  transition:0.4s;
+}
+#nav_round.activate{
+  transform: scale(1);
+}
+
+.nav_element{
+  position:absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width:60px;
+  height:60px;
+  background-color: maroon;
+  border-radius:50%;  
+  border:solid 4px peru;
+  transition:0.2s; 
+}
+
+.nav_element:hover{
+  color:cornsilk;
+  transform:scale(2);
+  transition:0.1s; 
+  border-color:cornsilk;
+  animation: neonBorder 0.4s ease-in-out infinite  alternate;
+}
+.nav_element:nth-child(1){
+  left:0;
+}
+
+.nav_element:nth-child(2){
+  left:12%;
+  bottom:12%;
+}
+.nav_element:nth-child(3){
+  bottom:0;
+}
+.nav_toggle{
+  z-index:10;
+  user-select:none;
+}
+.nav_toggle:hover{
+  color:cornsilk;
+  animation: neon 0.4s ease-in-out infinite  alternate;
+}
+
+
+@keyframes neon{
+  from {
+
+
+  text-shadow:0 0 1px white,
+  0 0 1px white,
+  0 0 5px white,
+  0 0 14px peru,
+  0 0 21px peru;
+
+
+  }
+  to{
+
+
+  text-shadow:0 0 1px white,
+  0 0 1px white,
+  0 0 5px white,
+  0 0 14px peru,
+  0 0 21px peru,
+  0 0 21px peru;
+
+  }
+}
+@keyframes neonBorder{
+  from {
+    text-shadow:  0 0 1px cornsilk,
+    0 0 1px cornsilk ;
+    box-shadow:  0 0 1px cornsilk,
+    0 0 1px cornsilk ,
+    0 0 1px cornsilk ;
+  }
+  to{
+    text-shadow:  0 0 1px cornsilk,
+    0 0 1px cornsilk ,
+    0 0 4px peru ;
+    box-shadow:  0 0 1px cornsilk,
+    0 0 1px cornsilk ,
+    0 0 4px cornsilk ,
+    0 0 14px peru;
+  }
+}
+
